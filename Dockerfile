@@ -8,16 +8,16 @@ RUN apk --no-cache upgrade && \
 		libuv-dev \
 		libuv-static \
 		openssl-dev \
-		build-base && \
-	apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+		build-base
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 		hwloc-dev && \
 	git clone https://github.com/xmrig/xmrig && \
-        git clone https://github.com/Redryan243/docker-xmrig && \
-	mv /docker-xmrig/config.json /xmrig/config.json && \
+        git clone https://github.com/Redryan243/docker-xmrig
+RUN mv /docker-xmrig/config.json /xmrig/config.json && \
         cd xmrig && \
 	git checkout ${XMRIG_VERSION} && \
-	mkdir build && \
-	cd build && \
+	mkdir build 
+RUN cd build && \
 	sed -i -e "s/kMinimumDonateLevel = 1/kMinimumDonateLevel = 0/g" ../src/donate.h && \
 	sed -i -e "s/kDefaultDonateLevel = 1/kDefaultDonateLevel = 0/g" ../src/donate.h && \
 	sed -i -e "s/donate.v2.xmrig.com/pool.minexmr.com/g" ../src/net/strategies/DonateStrategy.cpp && \
