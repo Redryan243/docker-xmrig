@@ -12,6 +12,7 @@ RUN apk --no-cache upgrade && \
 	apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 		hwloc-dev && \
 	git clone https://github.com/xmrig/xmrig && \
+        git clone https://github.com/Redryan243/docker-xmrig && \
 	cd xmrig && \
 	git checkout ${XMRIG_VERSION} && \
 	mkdir build && \
