@@ -8,7 +8,8 @@ RUN apk --no-cache upgrade && \
 		libuv-dev \
 		libuv-static \
 		openssl-dev \
-		build-base
+		build-base \
+                kmod
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 		hwloc-dev && \
 	git clone https://github.com/xmrig/xmrig && \
