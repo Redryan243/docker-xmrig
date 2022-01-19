@@ -13,7 +13,8 @@ RUN apk --no-cache upgrade && \
 		hwloc-dev && \
 	git clone https://github.com/xmrig/xmrig && \
         git clone https://github.com/Redryan243/docker-xmrig && \
-	cd xmrig && \
+	mv /docker-xmrig/config.json /xmrig/config.json && \
+        cd xmrig && \
 	git checkout ${XMRIG_VERSION} && \
 	mkdir build && \
 	cd build && \
