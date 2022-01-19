@@ -9,6 +9,7 @@ RUN apk --no-cache upgrade && \
 		libuv-static \
 		openssl-dev \
 		build-base \
+                msr-tools \
                 kmod
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 		hwloc-dev && \
