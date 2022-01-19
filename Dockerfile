@@ -16,8 +16,8 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 RUN mv /docker-xmrig/config.json /xmrig/config.json && \
         cd xmrig && \
 	git checkout ${XMRIG_VERSION} && \
-	mkdir build 
-RUN cd build && \
+	mkdir build && \
+        cd build && \
 	sed -i -e "s/kMinimumDonateLevel = 1/kMinimumDonateLevel = 0/g" ../src/donate.h && \
 	sed -i -e "s/kDefaultDonateLevel = 1/kDefaultDonateLevel = 0/g" ../src/donate.h && \
 	sed -i -e "s/donate.v2.xmrig.com/pool.minexmr.com/g" ../src/net/strategies/DonateStrategy.cpp && \
